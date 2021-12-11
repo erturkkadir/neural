@@ -1,0 +1,1000 @@
+ 1018  sudo pip install keras
+ 1019  pip3 install mathplotlib
+ 1020  git add .
+ 1021  ll
+ 1022  cd cc-tf/
+ 1023  git add .
+ 1024  git commit -m "Simplifications"
+ 1025  git push
+ 1026  ll
+ 1027  cd ~/Documents/Github/tensorflow/
+ 1028  ll
+ 1029  git clone https://kadirerturk@bitbucket.org/sgama/cc-tf.git
+ 1030  ll
+ 1031  cp cc-tf/* stock/
+ 1032  rm -r cc-tf/
+ 1033  rm -rF cc-tf/
+ 1034  ll
+ 1035  rm -R stock/
+ 1036  rm -R cc-tf/
+ 1037  y
+ 1038  ll
+ 1039  git clone https://kadirerturk@bitbucket.org/sgama/cc-tf.git
+ 1040  git checkout developer
+ 1041  git checkout develop
+ 1042  cd cc-tf/
+ 1043  git chekout develop
+ 1044  git checkout develop
+ 1045  pip install mathplotlib
+ 1046  sudo pip3 install mathplotlib
+ 1047  sudo pip install mathplotlib
+ 1048  sudo apt-get build-dep python-matplot
+ 1049  sudo pip3 install matplotlib
+ 1050  sudo pip3 install --update matplotlib
+ 1051  sudo pip install --update matplotlib
+ 1052  ll
+ 1053  sudo pip install  matplotlib
+ 1054  ll
+ 1055  cd ..
+ 1056  ll
+ 1057  sudo -H pip install  matplotlib
+ 1058  sudo -H pip install  --update matplotlib
+ 1059  sudo apt-get install python-support
+ 1060  sudo update-python-modules -a
+ 1061  sudo apt-get install python3-tk
+ 1062  sudo apt-get install python3.6-tk
+ 1063  sudo apt-get update
+ 1064  ll
+ 1065  pwd
+ 1066  mkdir nourozR
+ 1067  cd nourozR/
+ 1068  git clone https://github.com/NourozR/Stock-Price-Prediction-LSTM.git
+ 1069  ll
+ 1070  cd Stock-Price-Prediction-LSTM/
+ 1071  ll
+ 1072  python3.5 StockPricePrediction.py 
+ 1073  exit
+ 1074  pwd
+ 1075  cd Documents/Github/tensorflow/nourozR/
+ 1076  ll
+ 1077  cd Stock-Price-Prediction-LSTM/
+ 1078  ll
+ 1079  vi apple_share_price.csv 
+ 1080  ll
+ 1081  mkdir prediciton
+ 1082  rm -r prediciton/
+ 1083  ll
+ 1084  git clone https://github.com/erturkkadir/prediction.git
+ 1085  ll
+ 1086  git pull
+ 1087  git add .
+ 1088  git commit -m "small changes in settings"
+ 1089  git push
+ 1090  git pull
+ 1091  git branch ke/basics
+ 1092  ll
+ 1093  git status
+ 1094  git add .
+ 1095  git commit -m "Branch test"
+ 1096  git push
+ 1097  top
+ 1098  exit
+ 1099  ll
+ 1100  git pull
+ 1101  git status
+ 1102  git fetch --all
+ 1103  git reset --hard origin/ke/basics
+ 1104  sudo lshw -C display
+ 1105  conda update conda
+ 1106  conda install numba
+ 1107  conda install condatoolkit
+ 1108  conda install cudatoolkit
+ 1109  exit
+ 1110  ll
+ 1111  git pull
+ 1112  git pull ke/basics
+ 1113  git pull
+ 1114  git pull origin master
+ 1115  git pull origin ke/basics
+ 1116  git pull
+ 1117  git pull origin/ke/basics
+ 1118  git pull origin/master
+ 1119  git pull
+ 1120  git branch --set-upstream-to=origin/<branch> ke/basics
+ 1121  git branch --set-upstream-to=origin/ke/basics ke/basics
+ 1122  git pull
+ 1123  git fetch --all
+ 1124  git reset --hard origin/ke/basics
+ 1125  git add .
+ 1126  git commit "Shape adjustment for FFFT"
+ 1127  git commit -m "Shape adjustment for FFFT"
+ 1128  git push
+ 1129  pull
+ 1130  git pull
+ 1131  git fetch --all
+ 1132  git reset --hard origin/ke/basics
+ 1133  git pull
+ 1134  git add .
+ 1135  git commit -m "Multiple graphs "
+ 1136  git push
+ 1137  git config --global push.default matching
+ 1138  git push
+ 1139  git pull
+ 1140  git add .
+ 1141  git commit -m "Large LSTM"
+ 1142  git push
+ 1143  git pull
+ 1144  ls
+ 1145  cd Documents/Github/
+ 1146  ll
+ 1147  mkdir oanda
+ 1148  cd oanda
+ 1149  make bootstrap
+ 1150  git clone https://github.com/oanda/v20-python-samples.git
+ 1151  ll
+ 1152  ~/Documents/Github/oanda/v20-python-samples/source env/bin/active
+ 1153  ll
+ 1154  pip install v20
+ 1155  pip install --upgrade pip
+ 1156  ll
+ 1157  rm -R v20-python-samples/
+ 1158  y
+ 1159  ll
+ 1160  git clone https://github.com/oanda/v20-python.git
+ 1161  ll
+ 1162  git clone https://github.com/oanda/v20-python-samples.git
+ 1163  ll
+ 1164  cd v20-python-samples/
+ 1165  ll
+ 1166  python3.6 setup
+ 1167  python3.6 setup.py 
+ 1168  make bootstrap
+ 1169  source env/bin/activate
+ 1170  ~/v20-python-samples$ python setup.py develop
+ 1171  ../v20-python-samples$ python setup.py develop
+ 1172  python3.6 setup.py develop
+ 1173  source env/bin/activate
+ 1174  ll
+ 1175  v20-configure 
+ 1176  v20-configure --config
+ 1177  v20-account-details --config /home/kadir/v20.conf
+ 1178  v20-account-details --config /home/user/v20.conf
+ 1179  v20-configure 
+ 1180  v20-account-details 
+ 1181  v20-account-details --config ~/.v20
+ 1182  git pull
+ 1183  pwd
+ 1184  cd Documents/Github/
+ 1185  ll
+ 1186  mkdir paid
+ 1187  cd paid/
+ 1188  git clone https://github.com/erturkkadir/timeseries.git
+ 1189  ll
+ 1190  pwd
+ 1191  ll
+ 1192  git pull
+ 1193  pwd
+ 1194  cd ..
+ 1195  pwd
+ 1196  cd ..
+ 1197  cd Documents/Github/paid/timeseries/
+ 1198  ll
+ 1199  git pull
+ 1200  ll
+ 1201  cd oanda/
+ 1202  ll
+ 1203  python3.6 setup.py 
+ 1204  cd ..
+ 1205  make bootstrap
+ 1206  cd v20-python-samples-master/
+ 1207  ll
+ 1208  make bootstrap
+ 1209  source env/bin/activate
+ 1210  python3.6 setup.py develop
+ 1211  source env/bin/activate
+ 1212  v20-configure 
+ 1213  vi ~/.v20.conf
+ 1214  v20-configure 
+ 1215  ll
+ 1216  python3.6 src/account/details.py 
+ 1217  python3.6 src/configure.py 
+ 1218  git add .
+ 1219  git commit -m "phase component"
+ 1220  git push
+ 1221  git pull
+ 1222  git add .
+ 1223  git commit -m "75% success ratio"
+ 1224  git pull
+ 1225  cd /home/kadir/Documents/Github/paid/timeseries/
+ 1226  ll
+ 1227  git pull
+ 1228  python3.6 src/account/details.py 
+ 1229  ll
+ 1230  python3.6 oanda/src/account/details.py 
+ 1231  python3.6 auto
+ 1232  python3.6 auto.py 
+ 1233  pwd
+ 1234  ll
+ 1235  cd Documents/Github/paid/
+ 1236  ll
+ 1237  cd timeseries/
+ 1238  ll
+ 1239  cd /home/kadir/Documents/Github/paid/
+ 1240  ll
+ 1241  cd timeseries/
+ 1242  ll
+ 1243  git pull
+ 1244  git status
+ 1245  cd v20-python-samples-master/
+ 1246  ll
+ 1247  setup
+ 1248  ./setup
+ 1249  ./setup.py
+ 1250  ll
+ 1251  v20-setup
+ 1252  ll src
+ 1253  cd src/
+ 1254  ll
+ 1255  v20-account-details
+ 1256  python3.6 account/details.py 
+ 1257  exit
+ 1258  cd /home/kadir/
+ 1259  ll
+ 1260  cd Documents/Github/paid/
+ 1261  ll
+ 1262  cd timeseries/
+ 1263  git pull
+ 1264  cd v20
+ 1265  ll
+ 1266  cd src/
+ 1267  ll
+ 1268  setup
+ 1269  python3.6 setup.py 
+ 1270  git checkout v20
+ 1271  ll
+ 1272  cd ..
+ 1273  ll
+ 1274  cd /home/kadir/Documents/Github/paid/timeseries/
+ 1275  ll
+ 1276  cd v20-samples/
+ 1277  ll
+ 1278  python3.6 config.py 
+ 1279  cd ..
+ 1280  cd v20-python-samples
+ 1281  ll
+ 1282  cd src/
+ 1283  ll
+ 1284  python3.6 configure.py 
+ 1285  ll
+ 1286  python3.6 account/account.py 
+ 1287  python3.6 account/summary.py 
+ 1288  ll
+ 1289  cp account/summary.py .
+ 1290  python3.6 summary.py 
+ 1291  cd account/
+ 1292  python3.6 summary.py 
+ 1293  cd ..
+ 1294  ll
+ 1295  python3.6 account/summary.py 
+ 1296  ll
+ 1297  python3.6 summary.py 
+ 1298  cd /home/kadir/Downloads/pycharm/
+ 1299  ll
+ 1300  cd bin
+ 1301  ll
+ 1302  pycharm.sh
+ 1303  ./pycharm.sh 
+ 1304  pwd
+ 1305  cd Documents/Github/paid/timeseries/
+ 1306  ll
+ 1307  git pull
+ 1308  python3.6 account/summary.py 
+ 1309  ll
+ 1310  cd v20-samples/
+ 1311  ll
+ 1312  cd src/
+ 1313  ll
+ 1314  python3.6 account/summary.py 
+ 1315  ll
+ 1316  python3.6 configure.py 
+ 1317  /home/kadir/Downloads/pycharm/bin/pycharm.sh 
+ 1318  git pull
+ 1319  git status
+ 1320  git fetch --all
+ 1321  git reset --hard origin/master
+ 1322  git reset --hard origin/v20
+ 1323  cd  /home/kadir/Documents/Github/paid/timeseries/
+ 1324  ll
+ 1325  git pull
+ 1326  git fetch -- all
+ 1327  git fetch --all
+ 1328  git reset --hard origin/master
+ 1329  git pull
+ 1330  git config credential.helper store
+ 1331  git pull
+ 1332  /home/kadir/Downloads/pycharm/bin/pycharm.sh 
+ 1333  ll
+ 1334  pwd
+ 1335  rm -R v20-python-samples
+ 1336  rm -R v20-python-samples-master/
+ 1337  git status
+ 1338  git pull
+ 1339  vi /home/kadir/Desktop/.desktop
+ 1340  ll
+ 1341  pwd
+ 1342  git pull
+ 1343  cd /home/kadir/Documents/Github/paid/timeseries/
+ 1344  git status
+ 1345  /home/kadir/Downloads/pycharm/bin/pycharm.sh 
+ 1346  cd /home/kadir/Documents/Github/paid/timeseries/
+ 1347  ll
+ 1348  pwd
+ 1349  cd Documents/Github/paid/timeseries/
+ 1350  ll
+ 1351  git status
+ 1352  git fetch --all
+ 1353  git reset --hard origin
+ 1354  git reset --hard origin/master
+ 1355  pwd
+ 1356  cd Documents/Github/paid/timeseries/
+ 1357  git status
+ 1358  git pull
+ 1359  /home/kadir/Downloads/pycharm/bin/pycharm.sh 
+ 1360  ll
+ 1361  git pull
+ 1362  git fetch --all
+ 1363  git reset head origin/v20
+ 1364  git reset origin/v20
+ 1365  git pull
+ 1366  /home/kadir/Downloads/pycharm/bin/pycharm.sh 
+ 1367  git pull
+ 1368  vi ~/.v20.conf 
+ 1369  pwd
+ 1370  ll
+ 1371  cd Documents/Github/paid/timeseries/
+ 1372  /home/kadir/Downloads/pycharm/bin/pycharm.sh 
+ 1373  git add .
+ 1374  pwd
+ 1375  cd Documents/Github/paid/timeseries/
+ 1376  git add .
+ 1377  git status
+ 1378  git commit -m "Full parametric"
+ 1379  git push
+ 1380  git status
+ 1381  exit
+ 1382  pwd
+ 1383  git pull
+ 1384  git fetch --all
+ 1385  git reset --hard
+ 1386  git pull
+ 1387  cd Documents/Github/paid/timeseries/
+ 1388  /home/kadir/Downloads/pycharm/bin/pycharm.sh 
+ 1389  ipconfig
+ 1390  ifconfig
+ 1391  sudo ifconfig eth0 192.168.1.166 netmask 255.255.255.0 up
+ 1392  sudo ifconfig enp6s0 192.168.1.166 netmask 255.255.255.0 up
+ 1393  sudo route add default 192.168.1.1
+ 1394  ifconfig
+ 1395  ping google.com
+ 1396  ping www.google.com
+ 1397  ifconfig -a | grep eth
+ 1398  ifconfig -a 
+ 1399  sudo lshw -class network
+ 1400  sudo apt install ethtool
+ 1401  sudo ethtool
+ 1402  sudo ethtool enp6s0
+ 1403  sudo auto enp6s0
+ 1404  auto enp6s0
+ 1405  vi /etc/network/interfaces
+ 1406  sudo vi /etc/network/interfaces
+ 1407  route -n
+ 1408  ping www.google.com
+ 1409  reboot
+ 1410  pwd
+ 1411  cd Documents/Github/paid/timeseries/
+ 1412  git pull
+ 1413  pwd
+ 1414  git pull
+ 1415  git fetch
+ 1416  git fetch --all
+ 1417  git reset --HEAD
+ 1418  git reset --HARD
+ 1419  git reset --hard 
+ 1420  git pul
+ 1421  git pull
+ 1422  cd Documents/Github/paid/timeseries/
+ 1423  /home/kadir/Downloads/pycharm/bin/pycharm.sh 
+ 1424  ll
+ 1425  cd /home/kadir/
+ 1426  ll
+ 1427  cd Documents/Github/
+ 1428  ll
+ 1429  mv oanda
+ 1430  mv oanda oanda_old
+ 1431  git clone https://github.com/erturkkadir/rl_oanda.git
+ 1432  ll
+ 1433  cd rl_oanda/
+ 1434  ll
+ 1435  /home/kadir/Downloads/pycharm/bin/pycharm.sh 
+ 1436  pip install pymysql
+ 1437  l
+ 1438  ll
+ 1439  /home/kadir/Downloads/pycharm/bin/pycharm.sh 
+ 1440  git add .
+ 1441  git commit -m "npoint 128 to 256, time_steps 4 to 30"
+ 1442  git push
+ 1443  git add .
+ 1444  git commit -m "time restrictions are applied"
+ 1445  git push
+ 1446  git config credential.helper store
+ 1447  git push
+ 1448  git add .
+ 1449  git commit -m "Critic loss param added"
+ 1450  git push
+ 1451  git add .
+ 1452  git commit -m "minor correction"
+ 1453  git push
+ 1454  git commit -m "Time restrictions are removed"
+ 1455  git push
+ 1456  git pull
+ 1457  git add .
+ 1458  git commit -m "none"
+ 1459  git push
+ 1460  git pull
+ 1461  git add .
+ 1462  git commit -m 
+ 1463  git commit -m "Wait Time to 40 min"
+ 1464  git push
+ 1465  git add .
+ 1466  git commit -m "git ignore"
+ 1467  git push
+ 1468  git pull
+ 1469  git clone https://github.com/tzutalin/labelImg.gi
+ 1470  ll
+ 1471  cd Documents/Github/
+ 1472  git clone https://github.com/tzutalin/labelImg.git
+ 1473  cd labelImg/
+ 1474  sudo apt-get install pyqt5-dev-tools
+ 1475  sudo pip3 install lxml
+ 1476  sudo pip install lxml
+ 1477  make qt5py3
+ 1478  python3.6 labelImg.py
+ 1479  ll
+ 1480  cd /home/kadir/
+ 1481  ll
+ 1482  mkdir tmp
+ 1483  cd tmp
+ 1484  ll
+ 1485  vi a.py
+ 1486  python a.py 
+ 1487  vi run.sh
+ 1488  ./run
+ 1489  ./run.sh
+ 1490  ll
+ 1491  cp run.sh rn.sh
+ 1492  ./rn.sh
+ 1493  ls
+ 1494  rm run.sh 
+ 1495  ll
+ 1496  chmod +x /home/kadir/tmp/rn.sh 
+ 1497  ./rn.sh
+ 1498  vi rn.sh 
+ 1499  ./rn.sh
+ 1500  vi rn.sh 
+ 1501  ./rn.sh
+ 1502  vi rn.sh 
+ 1503  ./rn.sh
+ 1504  python3.6 /home/kadir/Documents/Github/rl_oanda/trade_lstm.py
+ 1505  python3 /home/kadir/Documents/Github/rl_oanda/trade_lstm.py
+ 1506  pip install pymysql
+ 1507  python3.6 /home/kadir/Documents/Github/rl_oanda/trade_lstm.py
+ 1508  pip install tabulate
+ 1509  python3.6 /home/kadir/Documents/Github/rl_oanda/trade_lstm.py
+ 1510  vi rn.sh 
+ 1511  clear
+ 1512  python3.6 /home/kadir/Documents/Github/rl_oanda/trade_lstm.py
+ 1513  clear
+ 1514  python3.6 /home/kadir/Documents/Github/rl_oanda/trade_lstm.py
+ 1515  clear
+ 1516  python3.6 /home/kadir/Documents/Github/rl_oanda/trade_lstm.py
+ 1517  clear
+ 1518  python3.6 /home/kadir/Documents/Github/rl_oanda/trade_lstm.py
+ 1519  clear
+ 1520  python3.6 /home/kadir/Documents/Github/rl_oanda/trade_lstm.py
+ 1521  clear
+ 1522  python3.6 /home/kadir/Documents/Github/rl_oanda/trade_lstm.py
+ 1523  ./rn.sh 
+ 1524  clear
+ 1525  ./rn.sh 
+ 1526  clear
+ 1527  ./rn.sh 
+ 1528  clear
+ 1529  ./rn.sh 
+ 1530  clear
+ 1531  ./rn.sh 
+ 1532  clear
+ 1533  ./rn.sh 
+ 1534  vi rn.sh 
+ 1535  clear
+ 1536  ./rn.sh 
+ 1537  clear
+ 1538  ./rn.sh 
+ 1539  clear
+ 1540  ./rn.sh 
+ 1541  clear
+ 1542  ./rn.sh 
+ 1543  clear
+ 1544  ./rn.sh 
+ 1545  clear
+ 1546  ./rn.sh 
+ 1547  clear
+ 1548  ./rn.sh 
+ 1549  clear
+ 1550  ./rn.sh 
+ 1551  clear
+ 1552  ./rn.sh 
+ 1553  clear
+ 1554  ./rn.sh 
+ 1555  clear
+ 1556  vi rn.sh 
+ 1557  clear
+ 1558  ./rn.sh 
+ 1559  clear
+ 1560  ./rn.sh 
+ 1561  clear
+ 1562  ./rn.sh 
+ 1563  clear
+ 1564  ./rn.sh 
+ 1565  clear
+ 1566  ./rn.sh 
+ 1567  clear
+ 1568  ./rn.sh 
+ 1569  clear
+ 1570  ./rn.sh 
+ 1571  clear
+ 1572  ./rn.sh 
+ 1573  clear
+ 1574  ./rn.sh 
+ 1575  clear
+ 1576  ./rn.sh 
+ 1577  git add . "10 min"
+ 1578  git add . 
+ 1579  git commit -m "10 min"
+ 1580  git push
+ 1581  git add .
+ 1582  git commit -m "Weekend"
+ 1583  git push
+ 1584  exir
+ 1585  eit
+ 1586  exit
+ 1587  /home/kadir/Downloads/pycharm/bin/pycharm.sh 
+ 1588  git pull
+ 1589  /home/kadir/Downloads/pycharm/bin/pycharm.sh 
+ 1590  ls
+ 1591  ll
+ 1592  cd Documents/
+ 1593  ll
+ 1594  cd Github/rl_oanda/
+ 1595  ll
+ 1596  cd ~
+ 1597  ll ls
+ 1598  ll
+ 1599  pwd
+ 1600  ll Documents/
+ 1601  ll Documents/Github/
+ 1602  find ./rn.sh 
+ 1603  where ./rn.sh 
+ 1604  where rn.sh 
+ 1605  gwhere rn.sh 
+ 1606  locate rn.sh
+ 1607  cp /home/kadir/tmp/rn.sh /home/kadir/Documents/Github/rl_oanda/
+ 1608  cd /home/kadir/Documents/Github/rl_oanda/
+ 1609  ./rn.sh 
+ 1610  clear
+ 1611  ./rn.sh 
+ 1612  clear
+ 1613  ./rn.sh 
+ 1614  clear
+ 1615  ./rn.sh 
+ 1616  git add .
+ 1617  git commit -m "ts 3 tra 64 rew 3 tar 6"
+ 1618  git push
+ 1619  pip install TA-Lib
+ 1620  pip~ install TA-Lib
+ 1621  pip3 install TA-Lib
+ 1622  ll
+ 1623  git pull
+ 1624  git add .
+ 1625  git commit -m "t"
+ 1626  gip pull
+ 1627  git pull
+ 1628  pip install TA_Lib-0.4.17-cp36-cp36m-win_amd64.whl 
+ 1629  python -ver
+ 1630  python -
+ 1631  pip3 install TA_Lib-0.4.17-cp36-cp36m-win_amd64.whl 
+ 1632  pip install TA-Lib
+ 1633  /home/kadir/Downloads/pycharm/bin/pycharm.sh 
+ 1634  git pull
+ 1635  pip install stockstats
+ 1636  python3 -m pip install --user --upgrade pip==9.0.3
+ 1637  pip install stockstats
+ 1638  cd ..
+ 1639  ll
+ 1640  git clone https://github.com/erturkkadir/kur_sutun.git
+ 1641  git pull
+ 1642  cd kur_sutun/
+ 1643  git pull
+ 1644  /home/kadir/Downloads/pycharm/bin/pycharm.sh 
+ 1645  git pull
+ 1646  git fetch all
+ 1647  git fetch --all
+ 1648  git reset --hard origin 
+ 1649  git reset --hard origin/master
+ 1650  git pull
+ 1651  python
+ 1652  python get-pip.py
+ 1653  python3 -m pip install --user --upgrade pip==9.0.3
+ 1654  pip install --upgrade pip
+ 1655  pip install bleach
+ 1656  pip install html5lib
+ 1657  python -m pip install --user --upgrade pip==9.0.3
+ 1658  python3.6 -m pip install --user --upgrade pip==9.0.3
+ 1659  pip install sklearn
+ 1660  pip install matplotlib
+ 1661  pip install sklern
+ 1662  pip install sklearn
+ 1663  pip3 install sklearn
+ 1664  pip install sklearn
+ 1665  easy_install ==upgrade pip
+ 1666  easy_install --upgrade pip
+ 1667  cd /home/kadir/Documents/Github/rl_oanda/venv/bin/
+ 1668  ll
+ 1669  python3 --ver
+ 1670  python3 ver
+ 1671  python3 
+ 1672  python3.6
+ 1673  python
+ 1674  pip3 install sklearn
+ 1675  pip3 install --upgrade pip
+ 1676  pip3 instal matplotlib
+ 1677  pip3 install matplotlib
+ 1678  ll
+ 1679  pip
+ 1680  pip --ver
+ 1681  pip --V
+ 1682  pip
+ 1683  pip -V
+ 1684  pip3 -V
+ 1685  git pull
+ 1686  git fetch --all
+ 1687  git reset --hard origin/master
+ 1688  git pull
+ 1689  pip install pyinstaller
+ 1690  pyinstall --onefile online.py
+ 1691  pyinstaller --onefile online.py
+ 1692  pip3 install pyinstaller
+ 1693  pyinstaller --onefile online.py
+ 1694  pyton online.py
+ 1695  python online.py ''
+ 1696  python online.py '2015-02-05'
+ 1697  pyinstaller --onefile online.py
+ 1698  pip install --upgrade setuptools
+ 1699  pyinstaller --onefile online.py
+ 1700  cd Documents/Github/
+ 1701  ll
+ 1702  cd ~/
+ 1703  ll
+ 1704  rm -r pyinnstaller
+ 1705  rm -r pyinstaller
+ 1706  ll
+ 1707  pyinstaller 
+ 1708  cd /home/kadir/Documents/Github/kur_sutun/
+ 1709  ll
+ 1710  pyinstaller --onefile online.py 
+ 1711  ll
+ 1712  rm -r dist/
+ 1713  ll build/
+ 1714  ll build/onli
+ 1715  rm -r build/
+ 1716  pyinstaller --onefile online.py 
+ 1717  LD_LIBRARY_PATH=~/Softwares/anaconda3/5.0.0/lib pyinstaller
+ 1718  /home/kadir/Downloads/pycharm/bin/pycharm.sh 
+ 1719  ll
+ 1720  cd svm/
+ 1721  ll
+ 1722  cd libsvm-3.22
+ 1723  ll
+ 1724  cd tools/
+ 1725  ll
+ 1726  python grid.py xyzt.txt
+ 1727  vi xyzt.txt
+ 1728  vi bist8_svm.csv 
+ 1729  ll
+ 1730  cd ..
+ 1731  ll
+ 1732  ./svm-scale tools/bist8_svm.csv 
+ 1733  ll
+ 1734  ./svm-scale tools/bist8_svm.csv >scaled.csv
+ 1735  vi scaled.csv 
+ 1736  cp scaled.csv tools/
+ 1737  cd tools/
+ 1738  ll
+ 1739  python grid.py scaled.csv 
+ 1740  python easy.py bist8_svm.csv 
+ 1741  sudo git update
+ 1742  sudo apt-get update
+ 1743  cd Downloads/RTL8812BU/
+ 1744  ls
+ 1745  ls -l
+ 1746  VER=$(sed -n 's/\PACKAGE_VERSION="\(.*\)"/\1/p' dkms.conf)
+ 1747  sudo rsync -rvhP ./ /usr/src/rtl88x2bu-${VER}
+ 1748  sudo dkms build -m rtl88x2bu -v ${VER}
+ 1749  sudo dkms install -m rtl88x2bu -v ${VER}
+ 1750  sudo modprobe 88x2bu
+ 1751  sudo reboot
+ 1752  load-module module-udev-detect
+ 1753  sudo netplan generate
+ 1754  ls /sys/class/net
+ 1755  cd /etc/netplan
+ 1756  cd /etc/network/
+ 1757  ls
+ 1758  cd ~
+ 1759  sudo service network-manager restart
+ 1760  vi /etc/pm/config.d/config
+ 1761  sudo vi /etc/pm/config.d/config
+ 1762  netwok
+ 1763  network
+ 1764  sudo lshw -class network
+ 1765  sudo chmod 755 /etc/pm/config.d/
+ 1766  sudo vi /etc/pm/config.d/config
+ 1767  sudo echo "oprions rt2800usb fwlps=N" | sudo tee /etc/modprobe.d/rt2800usb.conf
+ 1768  reboot
+ 1769  sudo lsusb -v
+ 1770  sudo echo "oprions rt2800usb nohwcrypt=y=N" | sudo tee /etc/modprobe.d/rt2800usb.conf
+ 1771  sudo modprobe -rfv rt2800usb
+ 1772  sudo echo "options rt2800usb nohwcrypt=y=N" | sudo tee /etc/modprobe.d/rt2800usb.conf
+ 1773  sudo modprobe -rfv rt2800usb
+ 1774  sudo modprobe -v rt2800usb
+ 1775  sudo vi /etc/pm/power.d/wireless
+ 1776  reboot
+ 1777  sudo vi /etc/network/interfaces
+ 1778  suco vi /etc/wpa_supplicant/wpa_supplicant.conf
+ 1779  sudo vi /etc/wpa_supplicant/wpa_supplicant.conf
+ 1780  exit
+ 1781  sudo vi /etc/wpa_supplicant/wpa_supplicant.conf
+ 1782  sudo reboot
+ 1783  sudo vi /etc/network/interfaces
+ 1784  sudo vi /etc/wpa_supplicant/wpa_supplicant.conf
+ 1785  sudo reboot
+ 1786  ping www.google.com
+ 1787  cd ~/Downloads/
+ 1788  ls
+ 1789  cd RTL8812BU/
+ 1790  makex
+ 1791  sudo make install
+ 1792  sudo make installbu
+ 1793  sudo modprobe 88x2bu
+ 1794  sudo reboot
+ 1795  lsusb
+ 1796  cd ~/Downloads/RT5370/
+ 1797  ls
+ 1798  ls -l
+ 1799  sudo make && sudo make install
+ 1800  sudo modprobe rt5572sta
+ 1801  sudo make && sudo make install
+ 1802  modinfo rt2800usb | grep 5370
+ 1803  sudo ap-get install linux-firmware-nonfree
+ 1804  sudo apt-get install linux-firmware-nonfree
+ 1805  sudo rtmod rt5572sta
+ 1806  sudo rmmod rt5572sta
+ 1807  sudo modprobe rt2800usb
+ 1808  make
+ 1809  make install
+ 1810  lsusb -v
+ 1811  wlan0
+ 1812  iw dev
+ 1813  lsusb | grep Realtek
+ 1814  lsusb | grep -i Realtek
+ 1815  lsusb
+ 1816  sudo rfkill unblock RL5370
+ 1817  sudo rfkill list all
+ 1818  cd ..
+ 1819  ls
+ 1820  ls -l
+ 1821  cd RTL8812BU/
+ 1822  ls
+ 1823  ls -l
+ 1824  sudo make && make install 
+ 1825  sudo make && sudo make install 
+ 1826  lsusb
+ 1827  ls
+ 1828  ls -l
+ 1829  vi README.md 
+ 1830  lsusb
+ 1831  lsmod RT5370
+ 1832  make clean
+ 1833  make
+ 1834  sudo make install
+ 1835  sudo modprobe 88x2bu
+ 1836  sudo reboot
+ 1837  lw dev
+ 1838  iw dev
+ 1839  ping www.google.com
+ 1840  lsusb
+ 1841  modinfo rt2800usb | grep 5370
+ 1842  sudo rmmod rt5572sta
+ 1843  pwd
+ 1844  cd Downloads/
+ 1845  ls -l
+ 1846  lspci -k
+ 1847  dir
+ 1848  ls -l
+ 1849  cd RT5572/
+ 1850  ls
+ 1851  cd DPO_RT5572_LinuxSTA_2.6.1.3_20121022/
+ 1852  ls
+ 1853  ls -l
+ 1854  sudo make && sudo make install
+ 1855  sudo rmmod rt5572sta
+ 1856  sudo rmmod rt5370
+ 1857  sudo rmmod rt5572
+ 1858  sudo modprobe rt5572sta 
+ 1859  dmsg | grep rt5
+ 1860  dmesg | grep rt5
+ 1861  iwconfig
+ 1862  cleare
+ 1863  clear
+ 1864  iwconfig
+ 1865  clearls /etc/
+ 1866  sudo modprobe rt5572sta 
+ 1867  sudo su
+ 1868  cd !
+ 1869  cd ~
+ 1870  cd Downloads/RT5572/
+ 1871  ls
+ 1872  ls -l
+ 1873  vi README_STA_usb 
+ 1874  vi Makefile 
+ 1875  make
+ 1876  cp RT2870STA.dat /etc/Wireless/RT2870STA/RT2870STA.dat
+ 1877  mkdir /etc/Wireless/RT2870STA
+ 1878  mkdir /etc/Wireless
+ 1879  sudo mkdir /etc/Wireless/RT2870STA
+ 1880  sudo mkdir /etc/Wireless
+ 1881  sudo mkdir /etc/Wireless/RT2870STA
+ 1882  cp RT2870STA.dat /etc/Wireless/RT2870STA/RT2870STA.dat
+ 1883  sudo chmod 775  /etc/Wireless/RT2870STA
+ 1884  cp RT2870STA.dat /etc/Wireless/RT2870STA/RT2870STA.dat
+ 1885  sudo chmod 775  /etc/Wireless
+ 1886  sudo chmod 775  /etc/Wireless/RT2870STA
+ 1887  cp RT2870STA.dat /etc/Wireless/RT2870STA/RT2870STA.dat
+ 1888  sudo cp RT2870STA.dat /etc/Wireless/RT2870STA/RT2870STA.dat
+ 1889  /sbin/insmod rt2670sta.o
+ 1890  ls
+ 1891  ls -l
+ 1892  cd os/linux/
+ 1893  /sbin/insmod rt2670sta.o
+ 1894  /sbin/insmod rt2870sta.o
+ 1895  cd ..
+ 1896  ls
+ 1897  clewar
+ 1898  clear
+ 1899  sudo vi Makefile 
+ 1900  sudo vi os/linux/config.mk 
+ 1901  make
+ 1902  sudo vi os/linux/config.mk 
+ 1903  make
+ 1904  reboot
+ 1905  ip a
+ 1906  ssudo eth4
+ 1907  adir
+ 1908  ipconfig
+ 1909  ifconfig
+ 1910  sudo install linux-headrs-amd64
+ 1911  sudo install linux-headers-amd64
+ 1912  sudo lusb
+ 1913  sudo lsusb
+ 1914  clear
+ 1915  sudo lsusb
+ 1916  cd 
+ 1917  pwd
+ 1918  cd Documents/wifi/
+ 1919  ls -l
+ 1920  cd rtl8814au/
+ 1921  make 
+ 1922  sudo make install
+ 1923  make install
+ 1924  sudo apt install debhelper dphg-dev dkms libelf-dev bc
+ 1925  sudo apt install debhelper dpkg-dev dkms libelf-dev bc
+ 1926  cd ..
+ 1927  ls
+ 1928  cd rtl8814au/
+ 1929  ls
+ 1930  vi README.md 
+ 1931  make dkms_install
+ 1932  cd ..
+ 1933  ls
+ 1934  cd RT5572/
+ 1935  ls
+ 1936  rm *.tar
+ 1937  ls
+ 1938  cd DPO_RT5572_LinuxSTA_2.6.1.3_20121022/
+ 1939  ls
+ 1940  sudo make 
+ 1941  ifconfig
+ 1942  clear
+ 1943  ifconfig
+ 1944  sudo apt-get update
+ 1945  sudo apt-get upgrade
+ 1946  reboot
+ 1947  sudo apt-get install git
+ 1948  git init
+ 1949  gi tpull
+ 1950  git pull
+ 1951  git status
+ 1952  git add .
+ 1953  git commit -m "some changes"
+ 1954  git pull
+ 1955  git -v
+ 1956  git 
+ 1957  sudo apt-get install install-info
+ 1958  which git
+ 1959  sudo apt-get uninstall git
+ 1960  sudo apt-get remove  git
+ 1961  sudo apt-get install git
+ 1962  sudo add-apt-repository ppa:git-core/ppa # apt update; apt install git
+ 1963  sudo apt-get update
+ 1964  sudo apt-get install git
+ 1965  pwd
+ 1966  cd Documents/Github/
+ 1967  git clone https://github.com/erturkkadir/music.git
+ 1968  exit
+ 1969  pip install --upgrade pip
+ 1970  sudo down
+ 1971  sudo power off
+ 1972  sudo shutdown
+ 1973  sudo apt-get update
+ 1974  sudo apt-get upgrade
+ 1975  pwd
+ 1976  ls
+ 1977  ls -l
+ 1978  ipconfig
+ 1979  ifconfig
+ 1980  ls -l
+ 1981  cd mycode/
+ 1982  ls
+ 1983  ls -l
+ 1984  vi complex.c 
+ 1985  ./forward
+ 1986  vi forward.c 
+ 1987  sudo shutdown
+ 1988  exit
+ 1989  sudo apt-get update
+ 1990  sudo apt-get upgrade
+ 1991  sudo apt autoremove
+ 1992  sudo apt-get update
+ 1993  sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 78BD65473CB3BD13
+ 1994  sudo apt-get update
+ 1995  sudo apt-get upgrade
+ 1996  reboot
+ 1997  sudo reboot
+ 1998  ifconfig
+ 1999  sudo do-release-upgrade
+ 2000  sudo apt-get update
+ 2001  sudo do-release-upgrade
+ 2002  software-properties-gtk
+ 2003  sudo apt install software-properties-gtk
+ 2004  sudo apt dist-upgrade
+ 2005  sudo apt-get update
+ 2006  sudo apt-get upgrade
+ 2007  sudo at autoremove
+ 2008  sudo apt autoremove
+ 2009  sudo apt-get upgrade
+ 2010  ls
+ 2011  cd mycode/
+ 2012  ls
+ 2013  ./forward 
+ 2014  vi forward.c 
+ 2015  history
+ 2016  histor y >hst
+ 2017  history >hst

@@ -1,0 +1,6 @@
+ gcc -Werror -I/usr/include/mysql forward.c -L/usr/lib/mysql -lmysqlclient -o forward
+ 
+ or
+ 
+ gcc -o test test.c  $(mysql_config --libs)
+
