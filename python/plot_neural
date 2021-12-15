@@ -1,6 +1,7 @@
 import mysql.connector
 import numpy as np
 
+from mpl_toolkits.mplot3d import Axes3D
 from mpl_toolkits import mplot3d
 import numpy as np
 import matplotlib.pyplot as plt
@@ -17,7 +18,7 @@ myCursor = myDB.cursor()
 
 
 def getData():
-    sql = "SELECT nr_x, nr_y, nr_z, nr_type FROM neuron LIMIT 500"
+    sql = "SELECT nr_x, nr_y, nr_z, nr_type FROM neuron"
     numRows = myCursor.execute(sql)
     records = myCursor.fetchall()
     aList = []
@@ -32,7 +33,8 @@ def getData():
 
 def plot_it(np_data):
     fig = plt.figure()
-    ax = plt.axes(projection='3d')
+    ax = plt.gca(projection='3d')
+    ax.set_aspect("auto")
 
 
     xLine = []
@@ -43,14 +45,20 @@ def plot_it(np_data):
         zLine.append(int(data[0]))
         xLine.append(int(data[1]))
         yLine.append(int(data[2]))
-        label.append(data[3])
+        if(data[3]=="input"):
+            label.append("red")
+        if(data[3]=="hidden"):
+            label.append("blue")
+        if(data[3]=="output"):
+            label.append("green")
     print(zLine)
+    label[label=='input']="gray"
+    label[label=='hidden']="blue"
+    label[label=='output']="red"
 
-    tupleList = list(zip(xLine, yLine, zLine))
+    # label[500, 500, 500] = 1
 
-    poly3d = [[tupleList[np_data[ix][iy]] for iy in range(len(np_data[0]))] for ix in range(len(np_data))]
-    ax.scatter(x,y,z)
-    ax.add_collection3d(Poly3DCollection(poly3d, facecolors='w', linewidths=1, alpha=0.5))
+    ax.scatter(xLine,yLine,zLine, c=label, cmap="brg")
 
     plt.show()
 
