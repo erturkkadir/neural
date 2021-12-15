@@ -1,0 +1,64 @@
+import mysql.connector
+import numpy as np
+
+from mpl_toolkits import mplot3d
+import numpy as np
+import matplotlib.pyplot as plt
+
+
+
+myDB = mysql.connector.connect(
+  host="192.168.1.166",
+  user="kadir",
+  password="kadir_erturk",
+  database="neural"
+)
+myCursor = myDB.cursor()
+
+
+def getData():
+    sql = "SELECT nr_x, nr_y, nr_z, nr_type FROM neuron LIMIT 500"
+    numRows = myCursor.execute(sql)
+    records = myCursor.fetchall()
+    aList = []
+    for record in records:
+        x = record[0]
+        y = record[1]
+        z = record[2]
+        l = record[3]
+        aList.append([x, y, z, l])
+        nList = np.array(aList)
+    return nList
+
+def plot_it(np_data):
+    fig = plt.figure()
+    ax = plt.axes(projection='3d')
+
+
+    xLine = []
+    yLine = []
+    zLine = []
+    label = []
+    for data in np_data:
+        zLine.append(int(data[0]))
+        xLine.append(int(data[1]))
+        yLine.append(int(data[2]))
+        label.append(data[3])
+    print(zLine)
+
+    tupleList = list(zip(xLine, yLine, zLine))
+
+    poly3d = [[tupleList[np_data[ix][iy]] for iy in range(len(np_data[0]))] for ix in range(len(np_data))]
+    ax.scatter(x,y,z)
+    ax.add_collection3d(Poly3DCollection(poly3d, facecolors='w', linewidths=1, alpha=0.5))
+
+    plt.show()
+
+
+
+np_data = getData() # This i numpy array to plot
+
+myDB.close()
+
+plot_it(np_data)
+
