@@ -78,6 +78,31 @@ Example call;
 
 This may take 6 mins in a good hardware
 
+NEURON ACTIVATION
+  The membrane potential on the cell is about -70, mV at the resting state.
+  If a neuron is excited ffrom previous one by a neurotransmitter then the soudium channel opens
+  The membrane potential increases up to treshold value which is -55mV, If excitation exceeds treshold then potassium channels also open.
+  That causes the nureon fires to +50mV spike.
+  At this point sodium channel closes and potential start to drop. When the potential reaches to rest value (-70 mV) then potassium channels closes/
+  The potential goes below -70 and recovery state starts.
+  It takes 2 ms to reaqch back to reasting
+  The neuroin cannot trigger again 2 ms(if excitation is not strong, otherwiese 1 ms)
+  
+  So the entire process 
+    1. Rising : 0.5 mS
+    2. Droping : 0.5 
+    3. Back to rest : 2 mS
+    4. Recovery : 2 mS
+    
+  So the total duration is 5 ms which indicates that a neuron can fire max 1000/5 = 200 times.
+  We will not allow a neuron to fire more than 200 times in a second. (Max frequency is : 200 Hz)
+  
+  
+  
+  
+  
+  
+
 
 
     createwei
