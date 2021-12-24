@@ -21,6 +21,12 @@ def getData():
     sql = "SELECT nr_x, nr_y, nr_z, nr_type FROM neuron"
     numRows = myCursor.execute(sql)
     records = myCursor.fetchall()
+    labels = []
+    x = records[0:]
+    y = records[1:]
+    z = records[2:]
+    l = records[3:]
+    l = label[ if(x=="input") labels.append["Red"] else labels.append["gray"]  for x in l]
     aList = []
     for record in records:
         x = record[0]
