@@ -1,0 +1,49 @@
+1. We have neuron table to hold neuron information
+	nr_x, nr_y, nr_z (neuron coordinate in 3D space)
+ 	nr_shiftr, nr_shifti (bias in complex plane)
+	nr_outr, nr_outi (neuron outputs in t)
+	nr_type : neuron type (input, hidden, output)
+	nr_status : wheter this neuron is excited or not
+		if it is excited, calculate in forward pass
+	nr_train : there is a potential needs to be backpropageded
+
+2. weight table hold information about connections between neurons
+	fromx_fromy, fromz (connection from)
+	to_x, to_y, to_z : (connected to )
+	we_real, we_imag : real, image part of weight
+
+both tables are indexed properly to access and update as fast as possible. 
+
+The cost is insertion and deletion and we plan to use it few times
+
+
+Stored Procedures
+	createnn : This procedure creates a neural network with a hiven parameters
+	px, py, pz : Network size in respective direction
+	inp_width: The width of input layer, it usually represent sensor input locations
+	cen_width: Centreal block width, it may be output of system, or a motor nuerons
+	Example 
+		call createnn(10,10,10,1,5);
+	creates a network with 10x10x10 dimentsion,
+	The surface of cube is assigned as input layer and creates 5x5x5 output layer cubes in the core.
+
+	createwei : Creates weighh map from neurons to neurons and assigne random number
+	px, py, pz : Network size in respective direction, thta number has to match with px,py,pz in createnn
+	d_x, d_y, d_z : How far a connection can go in deep in respective direction 	 
+	There is 2 other parameters that user can change,
+		n_min, n_max : How many connections this particular neuron can have (Ex : 10-20)
+	
+	forward : Calculate forward pass of network,
+		1. The query first finds out all neuron that arew excited by nr_status=1 condition Ne
+		2. Then finds all neuron that are connected those layer in step 1 Nc	
+		3. Find out all neurons that are connected Nc and nr_status = 1 (excited) Ns
+		4. Multiply the output of all Ns by related connection(Ns to Nc) and sum them up Nt
+		5. Apply sigmoid functions to set the output of Ne and make nr_status=1 for next step
+		6. goto process 1
+
+	formard outputs one parameter only which indicate the result of process
+	Example : 	call forward(@res)
+			select @res;
+			commit;
+
+		
