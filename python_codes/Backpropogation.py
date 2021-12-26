@@ -1,3 +1,6 @@
+# https://colab.research.google.com/drive/1casyYUSZQ1xCIoBlDVeAaJz0NvIbTUc2#scrollTo=q5bYsrKHWF8K
+# https://www.youtube.com/watch?v=7qYtIveJ6hU
+
 import numpy as np
 
 x = np.array(([2, 9], [1,5], [3,6]), dtype=float)
