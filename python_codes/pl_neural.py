@@ -7,7 +7,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-
 myDB = mysql.connector.connect(
   host="192.168.1.166",
   user="kadir",
@@ -26,7 +25,7 @@ def getData():
     y = records[1:]
     z = records[2:]
     l = records[3:]
-    l = label[ if(x=="input") labels.append["Red"] else labels.append["gray"]  for x in l]
+    # l = label[ if(x=="input") labels.append["Red"] else labels.append["gray"]  for x in l]
     aList = []
     for record in records:
         x = record[0]
