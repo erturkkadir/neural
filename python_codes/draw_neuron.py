@@ -14,8 +14,8 @@ myCursor = myDB.cursor()
 
 def get_data():
     sql = "SELECT nr_x, nr_y, nr_z, " \
-          "case nr_type when 'hidden' then 'o' when 'input' then 'v' when 'output' then 's' end as nr_type, " \
-          "case nr_type when 'hidden' then 'r' when 'input' then 'g' when 'output' then 'b' end as nr_type " \
+          "case nr_type when 'hidden' then '*' when 'input' then 'o' when 'output' then 'v' end as nr_type, " \
+          "case nr_type when 'hidden' then '0.8' when 'input' then '0.9' when 'output' then 'b' end as nr_type " \
           "FROM neuron WHERE 1"
     num_rows = myCursor.execute(sql)
     records = np.array(myCursor.fetchall())
@@ -25,13 +25,17 @@ def get_data():
 def plot_it(np_data):
     fig = plt.figure()
     ax = fig.add_subplot(projection='3d')
-    x = np_data[:, 0]
-    y = np_data[:, 1]
-    z = np_data[:, 2]
-    l = np_data[:, 3]
-    c = np_data[:, 4]
-    for point in np_data:
-      ax.scatter(int(point[0]), int(point[1]), int(point[2]), marker=point[3], color=point[4] )
+    x = np_data[:, 0].astype('float64')
+    y = np_data[:, 1].astype('float64')
+    z = np_data[:, 2].astype('float64')
+    l = np_data[:, 3].tolist()
+    c = np_data[:, 4].tolist()
+    # for point in np_data:
+    print(l)
+
+    ax.scatter(x, y, z, color=c)
+
+
 
     ax.set_xlabel('X Label')
     ax.set_ylabel('Y Label')
