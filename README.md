@@ -101,9 +101,14 @@ NEURON ACTIVATION
   
   
   
+  The neuron table has to satisfy followings
+  1. There is no connection to input layer neurons (sensors neurons)
+  2. There is no connection from output layer to anywhere. (action neurons)
+
+Having said that the following two queries has to generate null dataset
+
+1. select * from weight w, neuron n where w.we_tox = n.nr_x and w.we_toy = n.nr_y and w.we_toz = n.nr_z and n.nr_type='input' order by nr_x, nr_y, nr_z
+2. select * from weight w, neuron n where w.we_fromx = n.nr_x and w.we_fromy = n.nr_y and w.we_fromz = n.nr_z and n.nr_type='output' order by nr_x, nr_y, nr_z
   
 
-
-
-    createwei
   
