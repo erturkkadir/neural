@@ -15,8 +15,8 @@ myCursor = myDB.cursor()
 def get_data():
     sql = "SELECT nr_x, nr_y, nr_z, " \
           "case nr_type when 'hidden' then '*' when 'input' then 'o' when 'output' then 'v' end as nr_type, " \
-          "case nr_type when 'hidden' then 'b' when 'input' then 'r' when 'output' then '0.8' end as nr_type " \
-          "FROM neuron WHERE nr_type='input'"
+          "case nr_type when 'hidden' then 'b' when 'input' then 'r' when 'output' then 'g' end as nr_type " \
+          "FROM neuron WHERE nr_status = 1"
     num_rows = myCursor.execute(sql)
     records = np.array(myCursor.fetchall())
     return records

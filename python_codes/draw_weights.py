@@ -19,7 +19,8 @@ def get_data():
           "case n.nr_type when 'input' then 'b'   when 'output' then 'g'   else '0.5' end as n_color," \
           "nr_x, nr_y, nr_z " \
           "FROM neuron n, weight w " \
-          "WHERE w.we_tox=nr_x and w.we_toy=nr_y and w.we_toz = nr_z and nr_type = 'hidden'" \
+          "WHERE w.we_tox=nr_x and w.we_toy=nr_y and w.we_toz = nr_z and " \
+          " nr_x = 8 " \
           # "and n.nr_x=3 and n.nr_y=3 and n.nr_z=3"
     num_rows = myCursor.execute(sql)
     records = np.array(myCursor.fetchall())
