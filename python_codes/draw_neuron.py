@@ -1,13 +1,13 @@
 import mysql.connector
 import numpy as np
 import matplotlib.pyplot as plt
-
+import matplotlib.animation as ani
 
 myDB = mysql.connector.connect(
-  host="192.168.1.166",
-  user="kadir",
-  password="kadir_erturk",
-  database="neural"
+    host="192.168.1.166",
+    user="kadir",
+    password="kadir_erturk",
+    database="neural"
 )
 myCursor = myDB.cursor()
 
@@ -37,10 +37,20 @@ def plot_it(np_data):
     ax.set_ylabel('Y ')
     ax.set_zlabel('Z ')
 
+
+def forward():
+    args = [0]
+    myCursor.callproc('forward', args)
+
+
+for x in range(30):
+    np_data = get_data()  # This i numpy array to plot
+    plot_it(np_data)
+    # plt.show()
+    fname = "./im" + str(x) + ".jpg"
+    plt.title("t = " + str(x))
     plt.show()
-
-
-np_data = get_data() # This i numpy array to plot
+    plt.savefig(fname)
+    forward()
+# animator = ani.FuncAnimation(fig, get_data(), interval=100)
 myDB.close()
-plot_it(np_data)
-

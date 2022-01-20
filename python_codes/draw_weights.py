@@ -12,15 +12,8 @@ myCursor = myDB.cursor()
 
 
 def get_data():
-    sql = "SELECT we_fromx, we_fromy, we_fromz, we_tox, we_toy, we_toz, " \
-          "we_real, we_imag, " \
-          "case n.nr_type when 'input' then 'g'   when 'output' then 'y'   else '0.7' end as l_color," \
-          "case n.nr_type when 'input' then '0.2' when 'output' then '0.6' else '0.1' end as width," \
-          "case n.nr_type when 'input' then 'b'   when 'output' then 'g'   else '0.5' end as n_color," \
-          "nr_x, nr_y, nr_z " \
-          "FROM neuron n, weight w " \
-          "WHERE w.we_tox=nr_x and w.we_toy=nr_y and w.we_toz = nr_z and " \
-          " nr_x = 8 " \
+    sql = "SELECT * from weight "
+
           # "and n.nr_x=3 and n.nr_y=3 and n.nr_z=3"
     num_rows = myCursor.execute(sql)
     records = np.array(myCursor.fetchall())
