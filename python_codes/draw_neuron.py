@@ -68,4 +68,4 @@ graph = ax.scatter(x, y, z)
 
 anim = matplotlib.animation.FuncAnimation(fig, update_graph, 32, interval=750, blit=False)
 plt.show()
-anim.save("../progress.mp4")
+anim.save("progress.mp4")
