@@ -1,3 +1,5 @@
+import time
+
 import matplotlib
 import mysql.connector
 import numpy as np
@@ -50,8 +52,9 @@ ax.axes.set_ylim3d(bottom=0, top=11)
 ax.axes.set_zlim3d(bottom=0, top=11)
 x, y, z, a, c = get_data()
 graph = ax.scatter(x, y, z)
-ani = matplotlib.animation.FuncAnimation(fig, update_graph, 30, interval=500, blit=False)
-
+time.sleep(7)
+ani = matplotlib.animation.FuncAnimation(fig, update_graph, 20, interval=600, blit=False)
 plt.show()
+ani.save("progress.mp4")
 
 
