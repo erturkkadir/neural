@@ -97,6 +97,10 @@ NEURON ACTIVATION
   So the total duration is 5 ms which indicates that a neuron can fire max 1000/5 = 200 times.
   We will not allow a neuron to fire more than 200 times in a second. (Max frequency is : 200 Hz)
   
+  Neuron action potential https://www.youtube.com/watch?v=BbUcWbtVjT4
+  Possible neuro connections in 3d https://www.youtube.com/watch?v=QJ8AW5pi2T4
+  Neuron action potential timing and relax time graph  
+  
   
   
   
