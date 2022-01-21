@@ -1,3 +1,4 @@
+import matplotlib
 import mysql.connector
 import numpy as np
 import matplotlib.pyplot as plt
@@ -11,31 +12,22 @@ myDB = mysql.connector.connect(
 )
 myCursor = myDB.cursor()
 
+ts = 0
+
 
 def get_data():
     sql = "SELECT nr_x, nr_y, nr_z, " \
           "case nr_type when 'hidden' then '*' when 'input' then 'o' when 'output' then 'v' end as nr_type, " \
           "case nr_type when 'hidden' then 'b' when 'input' then 'r' when 'output' then 'g' end as nr_type " \
           "FROM neuron WHERE nr_status = 1"
-    num_rows = myCursor.execute(sql)
-    records = np.array(myCursor.fetchall())
-    return records
-
-
-def plot_it(np_data):
-    fig = plt.figure()
-    ax = fig.add_subplot(projection='3d')
-    x = np_data[:, 0].astype('float64')
-    y = np_data[:, 1].astype('float64')
-    z = np_data[:, 2].astype('float64')
-    l = np_data[:, 3].tolist()
-    c = np_data[:, 4].tolist()
-
-    ax.scatter(x, y, z, color=c)
-
-    ax.set_xlabel('X ')
-    ax.set_ylabel('Y ')
-    ax.set_zlabel('Z ')
+    myCursor.execute(sql)
+    t_data = np.array(myCursor.fetchall())
+    x1 = t_data[:, 0].astype('float64')
+    y1 = t_data[:, 1].astype('float64')
+    z1 = t_data[:, 2].astype('float64')
+    a1 = t_data[:, 3].tolist()
+    c1 = t_data[:, 4].tolist()
+    return x1, y1, z1, a1, c1
 
 
 def forward():
@@ -43,14 +35,23 @@ def forward():
     myCursor.callproc('forward', args)
 
 
-for x in range(30):
-    np_data = get_data()  # This i numpy array to plot
-    plot_it(np_data)
-    # plt.show()
-    fname = "./im" + str(x) + ".jpg"
-    plt.title("t = " + str(x))
-    plt.show()
-    plt.savefig(fname)
+def update_graph(ts=None):
+    ts = ts +1
+    x, y, z, a, c = get_data()
+    graph._offsets3d = (x, y, z)
+    plt.title("Time step : " + str(ts))
     forward()
-# animator = ani.FuncAnimation(fig, get_data(), interval=100)
-myDB.close()
+
+
+fig = plt.figure()
+ax = fig.add_subplot(projection='3d')
+ax.axes.set_xlim3d(left=0, right=11)
+ax.axes.set_ylim3d(bottom=0, top=11)
+ax.axes.set_zlim3d(bottom=0, top=11)
+x, y, z, a, c = get_data()
+graph = ax.scatter(x, y, z)
+ani = matplotlib.animation.FuncAnimation(fig, update_graph, 30, interval=500, blit=False)
+
+plt.show()
+
+
