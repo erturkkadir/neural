@@ -1,5 +1,3 @@
-import time
-
 import matplotlib
 import mysql.connector
 import numpy as np
@@ -24,7 +22,8 @@ def get_data():
           "FROM neuron WHERE nr_status = 1"
     myCursor.execute(sql)
     t_data = np.array(myCursor.fetchall())
-    if myCursor.rowcount > 0:
+    nrecs = myCursor.rowcount
+    if nrecs > 0:
         x1 = t_data[:, 0].astype('int64')
         y1 = t_data[:, 1].astype('int64')
         z1 = t_data[:, 2].astype('int64')
@@ -42,7 +41,7 @@ def get_data():
         a1.append('*')
         c1.append('r')
 
-    return x1, y1, z1, a1, c1
+    return x1, y1, z1, a1, c1, nrecs
 
 
 def forward():
@@ -51,21 +50,21 @@ def forward():
 
 
 def update_graph(num=None):
-    x2, y2, z2, a2, c2 = get_data()
+    x2, y2, z2, a2, c2, nrec = get_data()
     graph._offsets3d = (x2, y2, z2)
-    plt.title('Time Step , time={}'.format(num))
+    plt.title('Time Step , ' + str(num) + " n rec " + str(nrec) )
     forward()
 
 
 fig = plt.figure()
 ax = fig.add_subplot(projection='3d')
-ax.axes.set_xlim3d(left=0, right=27)
-ax.axes.set_ylim3d(bottom=0, top=27)
-ax.axes.set_zlim3d(bottom=0, top=27)
-x, y, z, a, c = get_data()
+ax.axes.set_xlim3d(left=0, right=13)
+ax.axes.set_ylim3d(bottom=0, top=13)
+ax.axes.set_zlim3d(bottom=0, top=13)
+x, y, z, a, c, nrec = get_data()
 
 graph = ax.scatter(x, y, z)
 
 anim = matplotlib.animation.FuncAnimation(fig, update_graph, 32, interval=750, blit=False)
 plt.show()
-anim.save("progress.mp4")
+# anim.save("progress.mp4")

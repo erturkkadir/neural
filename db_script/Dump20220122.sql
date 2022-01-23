@@ -18,17 +18,19 @@ USE `neural`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `global`
+-- Table structure for table `global_vars`
 --
 
-DROP TABLE IF EXISTS `global`;
+DROP TABLE IF EXISTS `global_vars`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `global` (
+CREATE TABLE `global_vars` (
   `status` enum('Free','Learn') NOT NULL DEFAULT 'Free',
   `eps` float DEFAULT '0.1',
   `test` double DEFAULT NULL,
   `time_stamp` int NOT NULL DEFAULT '0',
+  `treshold` float DEFAULT '0.2',
+  `step_number` int DEFAULT '6',
   PRIMARY KEY (`status`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -70,7 +72,7 @@ CREATE TABLE `neuron` (
   `nr_fired_at` int NOT NULL DEFAULT '0',
   PRIMARY KEY (`nr_no`),
   UNIQUE KEY `xyz_dx` (`nr_x`,`nr_y`,`nr_z`)
-) ENGINE=InnoDB AUTO_INCREMENT=14882913 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14942278 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -152,7 +154,7 @@ CREATE TABLE `weight` (
   `we_pimag` float NOT NULL DEFAULT '0' COMMENT 'imag value of previous weight',
   PRIMARY KEY (`we_no`),
   UNIQUE KEY `one_conn` (`we_fromx`,`we_fromy`,`we_fromz`,`we_tox`,`we_toy`,`we_toz`)
-) ENGINE=InnoDB AUTO_INCREMENT=439866 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=43111 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -402,6 +404,30 @@ declare r float;
 set r = p1real - p2real;
  
 RETURN r;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP FUNCTION IF EXISTS `float_random` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`kadir`@`%` FUNCTION `float_random`(
+        `pmin` float,
+        `pmax` float
+) RETURNS float
+    NO SQL
+    DETERMINISTIC
+BEGIN
+   RETURN pmin+(RAND()*(pmax-pmin));
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -963,7 +989,7 @@ while z<pz do
 		    then set ntype='input'; end if; 
  
             insert into neuron(nr_x, nr_y, nr_z, nr_shiftr, nr_shifti, nr_inpr, nr_inpi, nr_outr, nr_outi, nr_type,  nr_class, nr_delr, nr_deli, nr_desr, nr_desi, nr_train, nr_status)
-                        values(   x,    y,    z,    rand(), rand()/10,       0,       0,       0,       0,   ntype,'standart',       0,       0,       0,       0,        0,         0);
+                        values(   x,    y,    z,    float_random(-1, 1), float_random(-1, 1)/10,       0,       0,       0,       0,   ntype,'standart',       0,       0,       0,       0,        0,         0);
         	set x = x + 1;
         end while;
     	set y = y + 1;    
@@ -1123,6 +1149,7 @@ declare n_min, n_max, n_conn integer;
 declare x, y, z, i, j, k, to_x, to_y, to_z integer;
 declare str, tmp varchar(16000);
 declare nx_type, ny_type, nz_type varchar(20);
+declare max_step integer;
 set z = 0, y = 0, x = 0, i = 0, j = 0, k = 0;
 set n_min = 20; 	/* min number of connection a neuron can have */
 set n_max = 30;		/* max number of connection a neuron can have */
@@ -1194,7 +1221,7 @@ while z<pz do
                     
 						set tmp = concat("(", cast(x as char), ",", cast(y as char),",", cast(z as char), ",");  
 						set tmp = concat(tmp, cast(to_x as char), ",", cast(to_y as char),",", cast(to_z as char), ",");
-						set tmp = concat(tmp, cast(rand() as char), ",", cast(rand() as char),",", cast(rand() as char), ",", cast(rand() as char), ")," );
+						set tmp = concat(tmp, cast(float_random(-1, 1) as char), ",", cast(float_random(-1, 1) as char),",", cast(float_random(-1,1) as char), ",", cast(float_random(-1, 1) as char), ")," );
 						set str = concat(str, tmp); 
                         
                         /*call debug_msg(str);*/
@@ -1243,20 +1270,31 @@ delete from weight w where w.we_no in (select we_no from tmp);
 drop table tmp;
 
 /* No self connection is allowed N1 --> N1 */
-/*
 CREATE TEMPORARY TABLE IF NOT EXISTS tmp ENGINE=MEMORY AS 
 (select we_no from weight w where we_fromx = we_tox and we_fromy=we_toy and we_fromz = we_toz);
 delete from weight w where w.we_no in (select we_no from tmp);
 drop table tmp;
-*/
+
 /* No short circuit connections is allowed N1--N2 N2-->N1 */
-/*
 CREATE TEMPORARY TABLE IF NOT EXISTS tmp ENGINE=MEMORY AS 
 (select w1.we_no from weight w1, weight w2 where w1.we_fromx = w2.we_tox and w1.we_fromy = w2.we_toy and w1.we_fromz = w2.we_toz and 
 w2.we_fromx = w1.we_tox and w2.we_fromy = w1.we_toy and w2.we_fromz = w1.we_toz);
 delete from weight w where w.we_no in (select we_no from tmp);
 drop table tmp;
- */
+
+if(d_x > d_y) then 
+	set max_step = d_x;
+ else 
+	set max_step = d_y;
+ end if;   
+ 
+ if(d_z > max_step) then 
+	set max_step = d_z;
+ end if;   
+   
+/* max_step ( max(d_x, d_y, d_z) is the allowed number of forward conn, 1 is backward */   
+update global_vars set step_number = (max_step + 1) * 2 + 1;
+
 commit;
 
 
@@ -1386,14 +1424,13 @@ BEGIN
 /* Kadir Erturk April 16th, 2014 							*/ 
 /* All rights reserved and restricted, do not copy or use 	*/ 
 /* ******************************************************* 	*/
-declare treshold float;
+declare t_hold float;
 declare t_stamp int;
+declare n_step int;
 
 start transaction;
-select time_stamp into @t_stamp from global limit 1;
+select time_stamp, step_number, treshold into t_stamp, n_step, t_hold from global_vars limit 1;
 /* this table is for "to be update table" */
-
-
 drop table if exists tmp_n4;
 CREATE TEMPORARY TABLE IF NOT EXISTS tmp_n4 ENGINE=MEMORY AS 
 (SELECT 
@@ -1416,9 +1453,11 @@ WHERE
     w.we_fromx = n.nr_x and 
     w.we_fromy = n.nr_y and 
     w.we_fromz = n.nr_z and 
-    n.nr_status = 1 and abs(n.nr_fired_at-(select time_stamp from global limit 1) ) > 6
+    n.nr_status = 1 and 
+    abs(n.nr_fired_at- t_stamp) > n_step
 GROUP BY  
-	t.x, t.y, t.z, t.nr_shiftr, t.nr_shifti, t.nr_type, t.nr_status);
+	t.x, t.y, t.z, t.nr_shiftr, t.nr_shifti, t.nr_type, t.nr_status
+    );
 
 UPDATE neuron n3, tmp_n4 n4 
 SET  
@@ -1427,13 +1466,10 @@ SET
 WHERE
  n3.nr_x = n4.x and n3.nr_y = n4.y and n3.nr_z = n4.z;
 
-update neuron set nr_status = 0, nr_fired_at = @t_stamp WHERE nr_status = 1 and nr_type != 'output';
+update neuron set nr_status = 0, nr_fired_at = t_stamp WHERE nr_status = 1 and nr_type != 'output';
 update neuron n, tmp_n4 n4 SET n.nr_status = 1 WHERE n.nr_x = n4.x and n.nr_y = n4.y and n.nr_z = n4.z;
 
-/* weak signal should not propagate 
-update neuron n set nr_status = 0 where nr_status = 1 and sqrt(nr_outr * nr_outr + nr_outi * nr_outi) < treshold;
-*/
-update `global` g set g.time_stamp = case when g.time_stamp>1000 then 0 else g.time_stamp+1 end;
+update global_vars g set g.time_stamp = case when g.time_stamp>1000 then 0 else g.time_stamp+1 end;
 /*drop table tmp_n4; */
 set res = 1; 
 commit;
@@ -1501,6 +1537,29 @@ set rreal := up/dn;
 set up := exp(-preal) * sin(pimag);
 set dn := 1.0 + exp(-2*preal) + (2*exp(-preal)* cos(pimag));
 set rimag := up/dn;
+
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `test` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`kadir`@`%` PROCEDURE `test`()
+BEGIN
+declare t_stamp int;
+set t_stamp = 3;
+/* select time_stamp into t_stamp from global_vars where 1; */
+select t_stamp;
 
 END ;;
 DELIMITER ;
@@ -1658,4 +1717,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-01-22 11:51:31
+-- Dump completed on 2022-01-22 18:15:49
