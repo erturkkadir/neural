@@ -118,3 +118,4 @@ Having said that the following two queries has to generate null dataset
   
 
   
+![progress](https://user-images.githubusercontent.com/48729162/150878913-267655d0-a77b-4372-9f22-d2e3106a5b06.gif)
