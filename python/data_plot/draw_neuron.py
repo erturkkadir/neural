@@ -22,8 +22,8 @@ def get_data():
           "FROM neuron WHERE nr_status = 1"
     myCursor.execute(sql)
     t_data = np.array(myCursor.fetchall())
-    nrecs = myCursor.rowcount
-    if nrecs > 0:
+    n_recs = myCursor.rowcount
+    if n_recs > 0:
         x1 = t_data[:, 0].astype('int64')
         y1 = t_data[:, 1].astype('int64')
         z1 = t_data[:, 2].astype('int64')
@@ -41,7 +41,7 @@ def get_data():
         a1.append('*')
         c1.append('r')
 
-    return x1, y1, z1, a1, c1, nrecs
+    return x1, y1, z1, a1, c1, n_recs
 
 
 def forward():
@@ -50,18 +50,18 @@ def forward():
 
 
 def update_graph(num=None):
-    x2, y2, z2, a2, c2, nrec = get_data()
+    x2, y2, z2, a2, c2, n_rec = get_data()
     graph._offsets3d = (x2, y2, z2)
-    plt.title('Time Step , ' + str(num) + " n rec " + str(nrec) )
+    plt.title('Time Step , ' + str(num) + " n rec " + str(n_rec))
     forward()
 
 
 fig = plt.figure()
 ax = fig.add_subplot(projection='3d')
-ax.axes.set_xlim3d(left=0, right=13)
-ax.axes.set_ylim3d(bottom=0, top=13)
-ax.axes.set_zlim3d(bottom=0, top=13)
-x, y, z, a, c, nrec = get_data()
+ax.axes.set_xlim3d(left=0, right=39)
+ax.axes.set_ylim3d(bottom=0, top=39)
+ax.axes.set_zlim3d(bottom=0, top=39)
+x, y, z, a, c, n_rec = get_data()
 
 graph = ax.scatter(x, y, z)
 
