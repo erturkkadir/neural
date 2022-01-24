@@ -103,7 +103,8 @@ NEURON ACTIVATION
   
   
   
-  
+  ![cell_fire](https://user-images.githubusercontent.com/48729162/150878425-aeb46287-b719-4524-bdb1-3d40f607e101.png)
+
   
   The neuron table has to satisfy followings
   1. There is no connection to input layer neurons (sensors neurons)
