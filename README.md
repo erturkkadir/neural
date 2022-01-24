@@ -103,7 +103,8 @@ NEURON ACTIVATION
   
   
   
-  ![cell_fire](https://user-images.githubusercontent.com/48729162/150878425-aeb46287-b719-4524-bdb1-3d40f607e101.png)
+
+![cell_fire](https://user-images.githubusercontent.com/48729162/150878763-10052b46-9e3e-4220-a93a-aa71256da930.png)
 
   
   The neuron table has to satisfy followings
