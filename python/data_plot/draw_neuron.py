@@ -1,8 +1,7 @@
-import matplotlib
 import mysql.connector
 import numpy as np
 import matplotlib.pyplot as plt
-import matplotlib.animation as ani
+from sklearn.preprocessing import MinMaxScaler
 
 myDB = mysql.connector.connect(
     host="192.168.1.166",
@@ -14,6 +13,7 @@ myCursor = myDB.cursor()
 
 ts = 0
 
+scaler = MinMaxScaler(feature_range=(0, 100))
 
 def get_data():
     sql = "SELECT nr_x, nr_y, nr_z, " \
@@ -58,23 +58,31 @@ def update_graph(num=None):
 
 fig = plt.figure()
 ax = fig.add_subplot(projection='3d')
-ax.axes.set_xlim3d(left=0, right=39)
-ax.axes.set_ylim3d(bottom=0, top=39)
-ax.axes.set_zlim3d(bottom=0, top=39)
+ax.axes.set_xlim3d(left=0, right=9)
+ax.axes.set_ylim3d(bottom=0, top=9)
+ax.axes.set_zlim3d(bottom=0, top=9)
 
 x, y, z, a, c, n_rec = get_data()
 graph = ax.scatter(x, y, z, c=c)
 # ax.view_init(30, 0)
-for i in range(0, 360):
 
+
+for i in range(0, 200):
     plt.cla()
-    plt.title('Time Step , ' + str(i) + " n rec " + str(n_rec))
-    forward()
+    plt.title('Step Number : 9, Time Step , ' + str(i) + " n rec " + str(n_rec))
     x, y, z, a, c, n_rec = get_data()
+    c = (100.*(c - np.min(c))/(np.ptp(c)+0.001))  # ptp : max-min
+    print("Min c : " + str(np.min(c)))
+    print("Max c : " + str(np.max(c)))
     ax.scatter(x, y, z, c=c)
-    ax.set_zlim(0, 40)
-    ax.set_ylim(0, 40)
-    ax.set_xlim(0, 40)
+    ax.set_zlim(0, 9)
+    ax.set_ylim(0, 9)
+    ax.set_xlim(0, 9)
     plt.draw()
+    # ax.view_init(30, i*5)
+    forward()
     plt.pause(1)
 
+
+
+myDB.close()
