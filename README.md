@@ -119,3 +119,9 @@ Having said that the following two queries has to generate null dataset
 
   
 ![progress](https://user-images.githubusercontent.com/48729162/150878913-267655d0-a77b-4372-9f22-d2e3106a5b06.gif)
+
+
+
+https://www.youtube.com/watch?v=8bEkULBqHJo&t=741s 10:52sec says that smaller neurons were unable to slow down their frequency of firing to achieve the firing behaviour. The spike is initiated in the soma it travels up to dendrite reflects off this meanwhile the soduim channels are resetting themselves and comes back down and fires an other spike.
+
+Morphology might be mediating this behaviour. 
